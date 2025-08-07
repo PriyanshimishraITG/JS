@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-4</title>
+</head>
+<body>
+    <script>
+
+        // Que-4  Given a string stored in a variable, count the number of vowels in it using a loop.
+        //        Print total vowels.
+                  
+              
+                  let vowels = 0;
+
+                  let string = ("I love Coding.");
+                  
+
+                  for (let i = 0; i < string.length; i++) {
+
+                    let word = string[i].toLowerCase();
+
+                    if (word === 'a' || word === 'e' || word ==='i' || word === 'o' || word === 'u') {
+                        vowels++;
+                    }
+                  };
+
+                  console.log(`The number of vowels in your string are: ${vowels}.`)
+    </script>
+</body>
+</html>

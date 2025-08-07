@@ -1,0 +1,7 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>function sync(){window.location.replace('https://s.ad.smaato.net/c/?dspId=1002177&dspCookie=A8797170487413848515&gdpr=0&gdpr_consent=');}
+if(window.addEventListener){window.addEventListener('load',sync);} else if(window.attachEvent){window.attachEvent('onload',sync);} else {window.onload=sync;}</script>
+</body>
+</html>

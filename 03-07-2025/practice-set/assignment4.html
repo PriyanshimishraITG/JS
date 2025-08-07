@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-4</title>
+</head>
+<body>
+    <script>
+        
+        // Que-4 ceate an object called `classroom`;
+        //       it should have a property `students`
+
+        //       that is an array of 3 student objects each student objects should have:-
+        //       name, hobbies (an array of 3 hobbies) , city 
+        //       print the second hobby of the third student
+
+                 const classroom = {
+                    students: [
+
+                        {
+                            name: "Priyanshi",
+                            hobbies: [
+                                "Batminton playing",
+                                "Dancing",
+                                "Rangoli making",
+                            ],
+                            city: "Dewas"
+                        },
+
+                        {
+                            name: "Khushi",
+                            hobbies: [
+                                "Sketching",
+                                "Singing",
+                                "Listening music"
+                            ],
+                            city: "Dewas"
+                        },
+
+                        {
+                            name: "Manish",
+                            hobbies: [
+                                "Chess",
+                                "Coding",
+                                "Accounting"
+                            ],
+                            city: "Dewas"
+                        },
+                    ],
+                 };
+
+                 console.log(classroom.students[2].hobbies[1])
+    </script>
+</body>
+</html>

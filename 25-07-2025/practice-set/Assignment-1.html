@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Function Details:
+        // Function ka Naam: summarizeSalesData
+        // Parameters: salesData (jo ki sales records ka ek array hai).
+        // Argument: Diye gaye example mein, summarizeSalesData function ko call karte waqt sales array as an argument pass kiya jayega.
+        // Return Value: Function ko ek object return karna chahiye jo har category ke liye total revenue aur unique products ko summarize kare.
+        // Description: Aapko sales records ka ek simple array (flat array) diya gaya hai. Aapka task hai is data ko process karke ek summary object banana. Is summary object mein, har key ek product category hogi, aur uski value ek object hogi jisme us category ka totalRevenue aur usme beche gaye uniqueProducts ki list hogi.
+        // Input/Output:
+        // const sales = [
+        //   { product: 'Laptop', category: 'Electronics', price: 1200, quantity: 1 },
+        //   { product: 'Mouse', category: 'Electronics', price: 25, quantity: 2 },
+        //   { product: 'Shirt', category: 'Apparel', price: 50, quantity: 3 },
+        //   { product: 'Keyboard', category: 'Electronics', price: 75, quantity: 1 },
+        //   { product: 'Jeans', category: 'Apparel', price: 80, quantity: 2 },
+        // ];
+        // // Function call: summarizeSalesData(sales)
+        // output {
+        //   Electronics: { totalRevenue: 1325, uniqueProducts: [ 'Laptop', 'Mouse', 'Keyboard' ] },
+        //   Apparel: { totalRevenue: 310, uniqueProducts: [ 'Shirt', 'Jeans' ] }
+        // }
+
+        
+
+        const sales = [
+            { product: 'Laptop', category: 'Electronics', price: 1200, quantity: 1 },
+            { product: 'Mouse', category: 'Electronics', price: 25, quantity: 2 },
+            { product: 'Shirt', category: 'Apparel', price: 50, quantity: 3 },
+            { product: 'Keyboard', category: 'Electronics', price: 75, quantity: 1 },
+            { product: 'Jeans', category: 'Apparel', price: 80, quantity: 2 },
+        ];
+
+        function summarizeSalesData(salesData) {
+            let summary = {};
+            for (let x of salesData) {
+                let revenue = (x.price * x.quantity);
+                if (!summary[x.category]) {
+                    summary[x.category] = {
+                        overallRevenue: 0,
+                        uniqueone: [],
+                    };
+                };
+                summary[x.category].overallRevenue += revenue;
+                if (!summary[x.category].uniqueone.includes(x.product)){
+                    summary[x.category].uniqueone.push(x.product)
+                }; 
+            };
+            return summary;
+        };
+
+        let res = summarizeSalesData(sales);
+        console.log(res);
+
+
+
+////////////////////////////////////////////////////  SIR VLA CODE  //////////////////////////////////////////////////////////////       
+ 
+
+
+        // function  summarizeSalesData(sales){
+        //     let category = [];
+        //     sales.forEach((product) =>{
+        //         if(!category.includes(product.category)){
+        //             category.push(product.category);
+        //         };
+        //     });
+        //     let output = {};
+        //     category.forEach((cat) => {
+        //         output[cat] = {
+        //             TotalRevenue:0,
+        //             UniqueProducts:[]
+        //         };
+        //     });
+        //     sales.forEach((p) =>{
+        //         let totalPrice = p.price * p.quantity;
+        //         let cat = p.category;
+        //         let product = p.product;
+        //         output[cat].TotalRevenue += totalPrice;
+        //         let arr = output[cat].UniqueProducts;
+        //         if(!arr.includes(product)){
+        //             arr.push(product);
+        //         };
+        //     });
+        //     return output;
+        // };
+        // let res = summarizeSalesData(sales);
+        // console.log(res);
+
+
+    </script>
+</body>
+</html>

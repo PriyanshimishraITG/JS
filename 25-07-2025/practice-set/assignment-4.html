@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Function Details:
+        // Function ka Naam: mapSkillsToUsers
+        // Parameters: users (user objects ka array).
+        // Argument: Example mein, mapSkillsToUsers function ko users array ke saath call kiya jayega.
+        // Return Value: Function ko ek object return karna hai. Is object mein, keys skill names honge aur values un users ke naam ka array hoga jinke paas woh skill hai.
+        // Description: Aapke paas user objects ka ek array hai. Har user ke paas uske skills ki ek list hai. Aapko ek aisa object banana hai jisme keys skill names hon, aur values un users ke naam ka array ho jinke paas woh skill hai.
+        // Ek aur zaroori baat: har skill ke liye usernames ki jo list banegi, woh alphabetically (A-Z) sorted honi chahiye.
+        // Concepts: reduce, sort
+        // Input/Output:
+        // Pehla Input:
+        // const users = [
+        // { name: 'Zoe', skills: ['JavaScript', 'Python'] },
+        // { name: 'Adam', skills: ['Java', 'Python'] },
+        // { name: 'Chloe', skills: ['JavaScript', 'CSS'] },
+        // ];
+        // // Function call: mapSkillsToUsers(users)
+        // Pehla Output:
+        // {
+        // JavaScript: [ 'Chloe', 'Zoe' ],
+        // Python: [ 'Adam', 'Zoe' ],
+        // Java: [ 'Adam' ],
+        // CSS: [ 'Chloe' ]
+        // }
+
+
+
+
+
+////////////////////////////////////////////////////  SIR VLA CODE  //////////////////////////////////////////////////////////////       
+ 
+
+
+function giveMeUniqueSkills(users){
+    let skills = [];
+    users.forEach((user) => {
+        user.skills.forEach((skill) =>{
+            if(!skills.includes(skill)){
+                skills.push(skill);
+            }
+        })
+    })
+    return skills;
+}
+function mapSkillsToUsers(users){
+    let skills = giveMeUniqueSkills(users);
+    let output = {};
+     skills.forEach((skill) => {
+         output[skill] = [];
+     })
+     skills.forEach((skill) => {
+         users.forEach((user) => {
+             if(user.skills.includes(skill)){
+                 output[skill].push(user.name);
+             }
+         })
+     })   
+     for(let obj in output){
+         output[obj].sort();
+     }
+return output;
+}
+console.log(mapSkillsToUsers(users))
+    </script>
+</body>
+</html>

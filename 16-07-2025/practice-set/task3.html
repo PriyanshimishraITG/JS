@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-3</title>
+</head>
+<body>
+    <script>
+
+function num_guess (my_num){
+    while (true) {
+        
+        let guess_num = +prompt("Guess the number between(0 to 100) :- ");
+        
+        if (guess_num < my_num && guess_num > 0) {
+            count++;
+            console.log(`My number is greater than : ${guess_num}.`);
+        }
+        else if (guess_num > my_num && guess_num < 100) {
+            count++;
+            console.log(`My number is less than : ${guess_num}.`);
+        }
+        else {
+            count++;
+            console.log(`Yes you got! My number is : 66. You took -> ${count} attempts to guess my number.`);
+            break;
+        }
+    };
+};
+
+let count = 0;
+num_guess(66);
+
+
+    </script>
+</body>
+</html>

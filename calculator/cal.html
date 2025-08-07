@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .color1 {
+            color: white;
+        }
+        .calculator {
+            width: 300px;
+            height: 450px;
+            margin: auto;
+            padding: 20px;
+            background: rgb(255, 255, 255, 0);
+            border-radius: 20px;
+            box-shadow: 0 0 15px #aaa;
+            position: absolute;
+            bottom: 50px;
+            top: 150px;
+            left: 50px;
+            right: 50px;
+        }
+        .calculator1 {
+            border: 1px solid gray;
+            box-shadow: 0 0 20px 5px #888;
+        }
+        .display {
+            color: white;
+            background: rgb(255, 255, 255, 0);
+            padding: 20px;
+            font-size: 28px;
+            text-align: right;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            min-height: 40px;
+            border: 1px solid #ccc;
+        }
+        .display1 {
+            color: black;
+            border: 1px solid #6e747a;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            background: linear-gradient(to right, blue, skyblue);
+        }
+        .button1 {
+            background: linear-gradient(to right, rgb(2, 183, 255), white);
+            opacity: 0.7;
+        }
+        .color2 {
+            color: #000;
+        }
+        .kgf {
+            color: red;
+            background: linear-gradient(to right, rgb(2, 183, 255), white);
+        }
+        .rrr {
+            color: blue;
+        }
+        .rrr:hover {
+            color: white;
+        }
+        .equal {
+            background: linear-gradient(to right, rgb(2, 183, 255), white);
+            color: black;
+            border-radius: 50%;
+        }
+        .color0 {
+            background: linear-gradient(to right, #07f5c5, white);
+        }
+        .equal1 {
+            color: #0f7280;
+        }
+        button:hover {
+            background: linear-gradient(to right, skyblue, blue);
+            color: black;
+        }
+        .equal:hover, .kgf:hover {
+            background: linear-gradient(to right, white, rgb(2, 183, 255));
+        }
+        #bg_img {
+            background-repeat: no-repeat;
+            width: 100%;
+            position: relative;
+            object-fit: cover;
+        }
+        header {
+            background-color: black;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 1337px;
+            margin: auto;
+        }
+        #theme {
+            color: white;
+            padding: 20px;
+        }
+        #logo {
+            height: 50px;
+        }
+        .welcome{
+            display: inline-block;
+            border: 5px solid#07f5c5;
+            border-radius: 20px;
+            padding: 4px;
+            position: absolute;
+            z-index: 88;
+            left: 39%;
+            display: none;
+        }
+        .innerone{
+            border: 3px solid#07f5c5;
+            border-radius: 15px;
+            padding: 10px;
+            background-color: white;
+        }
+        .popbtn{
+            display: flex;
+            justify-content: center;
+        }
+        .btnpop {
+            background: linear-gradient(to right, #07f5c5, white);
+        }
+        .mbox {
+            background: linear-gradient(to bottom, rgb(2, 183, 255), #07f5c5);
+            color: white;
+            margin: 0 auto;
+            font-size: 35px;
+            height: 50px;
+            width: 100%;  
+            position: absolute;
+            z-index: 3;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class = "header">
+            <div><img src="images/logo.png" alt="" id = "logo"></div>
+            <div> <i class="fa fa-adjust" id = "theme" onclick = "themeMode ()"></i> </div>
+        </div>
+    </header>
+
+    <div class = "mbox">
+        <span id = "typer"></span>
+    </div>
+
+    <div id = "welcome" class = "welcome">
+        <div class = "innerone">
+            <div>
+                <h2 class = "h2">Welcome to my website!</h2>
+            </div>
+            <div class = "popbtn"> <button class = "btnpop" onclick = "clicknow ()"> <b> OK </b> </button> </div>
+        </div>
+    </div>
+
+    <div id = "box" class = "deactive">
+        <div>
+            <img src = "https://wallpaperbat.com/img/632439-nature-night-hd-wallpaper.jpg"  id = "bg_img">
+        </div>
+        <div class="calculator" id = "calc">
+            <div class="display" id="displaynum"></div>
+            <div class="buttons">
+                
+                <button class="kgf new0"onclick="clearDisplay()"> <b> C </b> </button>
+                <button class="rrr new"onclick="appendValue('(')"> <b> ( </b> </button>
+                <button class="rrr new"onclick="appendValue(')')"> <b> ) </b> </button>
+                <button class="rrr new"onclick="appendValue('/')"> <b> ÷ </b></button>
+
+                <button onclick="appendValue('7')" class="color1 new1"> <b> 7 </b> </button>
+                <button onclick="appendValue('8')" class="color1 new1"> <b> 8 </b> </button>
+                <button onclick="appendValue('9')" class="color1 new1"> <b> 9 </b> </button>
+                <button class="rrr new"onclick="appendValue('*')"> <b> x </b></button>
+
+                <button onclick="appendValue('4')" class="color1 new1"> <b> 4 </b> </button>
+                <button onclick="appendValue('5')" class="color1 new1"> <b> 5 </b> </button>
+                <button onclick="appendValue('6')" class="color1 new1"> <b> 6 </b> </button>
+                <button class="rrr new"onclick="appendValue('-')"> <b> - </b> </button>
+
+                <button onclick="appendValue('1')" class="color1 new1"> <b> 1 </b> </button>
+                <button onclick="appendValue('2')" class="color1 new1"> <b> 2 </b> </button>
+                <button onclick="appendValue('3')" class="color1 new1"> <b> 3 </b> </button>
+                <button class="rrr new"onclick="appendValue('+')"> <b> + </b> </button> 
+
+                <button class="rrr new"onclick="appendValue('.')"> <b> . </b> </button>
+                <button onclick="appendValue('0')" class="color1 new1"> <b> 0 </b> </button>
+                <button class="rrr new"onclick="appendValue('%')"> <b> % </b> </button>
+                <button class="equal new0" onclick="calculate()"> <b> = </b> </button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById('displaynum');
+        function appendValue (value) {
+            display.innerText += value;
+        };
+        function clearDisplay () {
+            display.innerText = "";
+        };
+        function calculate() {
+            
+        };
+        let boxneww = document.getElementById("welcome");
+        setTimeout (() => {
+            boxneww.style.display = "inline-block";
+        }, 2000)
+        function clicknow () {
+            boxneww.style.display = "none";
+        };
+        const names = [
+            "Calculators: Making_Math_Effortless!",
+            "Your_Go-To_Math_Machine!",
+            "Unlock_the_power_of_numbers_with_us!",
+            "Ideal_home_calculator!" 
+        ];
+        const typer = document.getElementById("typer");
+        let i = 0;
+        let n = names.length;
+        setInterval(() => {
+            let word = names[i];
+            let j = 0;
+            const value = setInterval(() => {
+                if (j < word.length) {
+                    typer.innerText = typer.innerText.slice(0, -1)
+                    typer.innerText += word[j];
+                    typer.innerText += "|"
+                }
+                else {
+                    stopinterval();
+                }
+                function stopinterval() {
+                    clearInterval(value)
+                }
+                j++;
+            }, 100);
+            i++;
+            i = i % n;
+            typer.innerText = "";
+        }, 5000);
+
+        let box = document.querySelector("#box");
+        let a = document.getElementById("bg_img");
+        let b = document.getElementById("displaynum");
+        let c = document.getElementById("calc");
+        let d = document.querySelectorAll(".new");
+        let e = document.querySelectorAll(".new1");
+        let f = document.querySelectorAll(".new0");
+        let g = document.querySelector(".equal");
+
+        function themeMode () {
+            if (a.getAttribute("src") === "https://wallpaperbat.com/img/632439-nature-night-hd-wallpaper.jpg") {
+                a.setAttribute("src", "https://assets.weforum.org/article/image/0ZUBmNNVLRCfn3NdU55nQ00UF64m2ObtcDS0grx02fA.jpg");
+            } else {
+                a.setAttribute("src", "https://wallpaperbat.com/img/632439-nature-night-hd-wallpaper.jpg");
+            };
+            b.classList.toggle("display1");
+            c.classList.toggle("calculator1"); 
+            d.forEach(el => {
+                el.classList.toggle("button1");
+            });
+            e.forEach(el => {
+                el.classList.toggle("button1");
+            });
+            e.forEach(el => {
+                el.classList.toggle("color2");
+            });
+            f.forEach(el => {
+                el.classList.toggle("color0");
+            });
+            g.classList.toggle("equal1");
+        };
+        
+    </script>
+
+</body>
+</html>

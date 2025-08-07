@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// let arr = ["id", "age", "name"];
+// let obj = {
+//     id: "ITGeeks",
+//     age: 18,
+//     name: "Priyanshi Mishra",
+// };
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(`key:  ${arr[i]} & value:  ${obj[arr[i]]}`);
+// };
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+// let arr = ["id", "age", "name"];
+// let obj = {
+//     index1: 0,
+//     index2: 1,
+//     index3: 2,
+// };
+// for (let i in obj) {
+//     console.log(arr[obj[i]]);
+// };
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+let arr = ["apple", "banana", "c", "d", "e", "f", "apple", "banana", "c", "d", "e", "f", "apple", "banana", "c", "d", "e", "f"];
+let obj = {
+    arrOFindex1: [0, 3, 7, 8],
+    arrOFindex2: [0, 6, 7, 3],
+    arrOFindex3: [0, 6, 7, 3],
+    arrOFindex4: [0, 6, 7, 3],
+    arrOFindex5: [0, 6, 7, 3],
+};
+for (let i in obj) {
+    for (let x of obj[i]) {
+        console.log(arr[x]);
+    };
+};       
+    </script>
+</body>
+</html>

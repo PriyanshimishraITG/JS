@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 3. Element ka Attribute Get Karna
+            Description: getAttribute() ka use karke kisi custom element ka data-* attribute fetch karo aur console mein 
+            show karo. -->
+
+    <div class = "box">
+        <span class = "child"></span>
+    </div>
+    
+    <script>
+        let box = document.querySelector(".box");
+        let a = box.getAttribute("class");
+        console.log(a);
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Que-1.  Make function in an object in which we assign name, age, salary and bonus when we call it. It also 
+        //         gives total salary.
+
+        // let emp = {
+        //     name: null,
+        //     age: null,
+        //     salary: null,
+        //     bonus: null,
+        //     total_salary: null,
+        //     calculateTotalSalary:(name, age, salary, bonus) => {
+        //         let total_salary = (salary + bonus);
+        //         emp.name = name;
+        //         emp.age = age;
+        //         emp.salary = salary;
+        //         emp.bonus = bonus;
+        //         emp.total_salary = total_salary;
+        //     },
+        // };
+        // emp.calculateTotalSalary("Riya", 22, 50000, 5000);
+        // console.log(emp);
+        // emp.calculateTotalSalary("Supriya", 22, 50000, 5000);
+        // console.log(emp);
+
+
+
+        let emp = {
+            name: null,
+            age: null,
+            salary: null,
+            bonus: null,
+            total_salary: null,
+            calculateTotalSalary : function (name, age, salary, bonus) {
+                let total_salary = (salary + bonus);
+                this.name = name;
+                this.age = age;
+                this.salary = salary;
+                this.bonus = bonus;
+                this.total_salary = total_salary;
+            },
+        };
+        emp.calculateTotalSalary("Niya", 22, 50000, 5000);
+        console.log(emp);
+        emp.calculateTotalSalary("Priya", 22, 50000, 5000);
+        console.log(emp);
+    </script>
+</body>
+</html>

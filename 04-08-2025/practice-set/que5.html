@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 5. Check Karna Ki Attribute Exist Karta Hai Ya Nahi
+            Description: hasAttribute() se check karo ki ek element ke paas href attribute hai ya nahi, aur usse console 
+            log karo. -->
+    <div>
+        <a href="" class="neww"></a>
+    </div>
+    
+    <script>
+        let neww = document.querySelector(".neww");
+        let a = neww.hasAttribute("href");
+        console.log(a);
+    </script>
+</body>
+</html>

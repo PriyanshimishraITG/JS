@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Function Details:
+        // Function ka Naam: checkBudgetCompliance
+        // Parameters: departments (departments ka array), budgetThreshold (ek number).
+        // Argument: Example mein, departments array aur budgetThreshold number ko function mein pass kiya jayega.
+        // Return Value: Function ko ek boolean (true ya false) return karna hai.
+        // Description: Aapko departments ka ek array diya gaya hai, jahan har department ke paas apne expenses (kharchon) ka ek array hai. Aapka kaam yeh pata lagana hai ki kya kam se kam ek (at least one) department "compliant" hai.
+        // Ek department compliant tabhi mana jayega jab uske saare ke saare (every single one) expenses diye gaye budgetThreshold se kam hon.
+        // Input/Output:
+        // const departments = [
+        // { name: 'Engineering', expenses: [{ item: 'Laptop', cost: 1500 }, { item: 'Software', cost: 1000 }] },
+        // { name: 'Marketing', expenses: [{ item: 'Ad Campaign', cost: 800 }, { item: 'Swag', cost: 450 }] },
+        // { name: 'HR', expenses: [{ item: 'Team Event', cost: 1200 }, { item: 'Training', cost: 950 }] },
+        // ];
+        // const budgetThreshold = 1000;
+        // // Function call: checkBudgetCompliance(departments, budgetThreshold)
+        // const departments = [
+        // { name: 'Engineering', expenses: [{ item: 'Laptop', cost: 1500 }, { item: 'Software', cost: 1000 }] },
+        // { name: 'Marketing', expenses: [{ item: 'Ad Campaign', cost: 800 }, { item: 'Swag', cost: 450 }] },
+        // { name: 'HR', expenses: [{ item: 'Team Event', cost: 1200 }, { item: 'Training', cost: 950 }] },
+        // ];
+        // const budgetThreshold = 1000;
+        // // Function call: checkBudgetCompliance(departments, budgetThreshold)
+        // Pehla Output: true (kyunki 'Marketing' department ke saare kharche $1000 se kam hain).
+        // Dusra Input: Upar wala departments array hi, lekin budgetThreshold = 400 ke saath.
+        // Dusra Output: false (kyunki koi bhi aisa department nahi hai jiske saare kharche $400 se kam hon).
+
+
+        
+
+
+////////////////////////////////////////////////////  SIR VLA CODE  //////////////////////////////////////////////////////////////       
+ 
+
+
+const departments = [
+    { name: 'Engineering', expenses: [{ item: 'Laptop', cost: 1500 }, { item: 'Software', cost: 1000 }] },
+    { name: 'Marketing', expenses: [{ item: 'Ad Campaign', cost: 800 }, { item: 'Swag', cost: 450 }] },
+    { name: 'HR', expenses: [{ item: 'Team Event', cost: 1200 }, { item: 'Training', cost: 950 }] },
+];
+
+function checkBudgetCompliance(departments, budgetThreshold){    
+    let res  = departments.some((dep) => {        
+        let expenses = dep.expenses;
+        let res = expenses.every((exp) =>{            
+            if(exp.cost < budgetThreshold) return true
+            return false;        
+        })
+        return res;    
+    })
+    return res;
+}
+
+const budgetThreshold = 1000;
+console.log(checkBudgetCompliance(departments,budgetThreshold));
+
+
+    </script>
+</body>
+</html>

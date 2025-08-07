@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-1</title>
+</head>
+<body>
+    <script>
+      
+        // Que-1  Create a movie object with title and rating (0–10).
+        //        Use if-else to print:
+        //        -->  "Excellent" if rating ≥ 9
+        //        -->  "Good" if 7–8.9
+        //        -->  "Average" if 5–6.9
+        //        -->  "Poor" if <5
+
+                  const movie = {
+                    title: "XYZ",
+                    rating: 8.8
+                  }
+
+                  if (movie.rating >= 9) {
+                    console.log("Excellent");
+                  }
+                  else if (movie.rating >= 7 && movie.rating <= 8.9) {
+                    console.log("Good");
+                  }
+                  else if (movie.rating >= 5 && movie.rating <= 6.9) {
+                    console.log("Average");
+                  }
+                  else {
+                    console.log("Poor");
+                  }
+
+    </script>
+</body>
+</html>

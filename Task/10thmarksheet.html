@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10th-marksheet</title>
+</head>
+<body>
+    <script>
+
+        // Agar 2 main fail hai to supply                               71 - dist   32 - supply                 
+        // Agar 3 or 3 se jyda me fail to fail                          35          18
+        //                                                              85          39
+        // Agar 40 se kam - 3rd division                                81          41
+        // Agar 40 - 59.99 - second division                            55          29
+        // Agar 60 - 75 - 1st division                                  30          20
+        // Agar 75 se jyda - A+ division
+
+        const student = {
+                    hindi_1: prompt ("Marks of Hindi"),  
+                    english_1: prompt ("Marks of English"),
+                    maths_1: prompt ("Marks of Maths"),
+                    science_1: prompt ("Marks of Science"),
+                    social_1: prompt ("Marks of Social-Studies"),
+                    sanskrit_1: prompt ("Marks of Sanskrit"),
+                  };
+
+                  let hindi = Math.floor(student.hindi_1);
+                  let english = Math.floor(student.english_1);
+                  let maths = Math.floor(student.maths_1);
+                  let science = Math.floor(student.science_1);
+                  let social = Math.floor(student.social_1);
+                  let sanskrit = Math.floor(student.sanskrit_1);
+                  
+                  console.log(`Subjects  -  Total  -  Passing-marks  -  Other`);
+                  let other;
+                  let supply = 0;
+                  let error = 0;
+
+                //Hindi 
+                  if (hindi >= 71 && hindi <= 100) {
+                    other = "#distin";   
+                    console.log(` Hindi    -   100   -      32         -  ${other}`);
+                  }
+                  else if (hindi < 0 || hindi == "") {
+                    other = "error";
+                    error++;
+                    console.log(` Hindi    -   100   -      32         -  ${other}`)
+                  }
+                  else if (hindi < 32) {
+                    other = "supply";  
+                    supply++;    
+                    console.log(` Hindi    -   100   -      32         -  ${other}`)             
+                  }
+                  else if (hindi < 71 && hindi >= 32) {
+                    other = "";
+                    console.log(` Hindi    -   100   -      32         -  ${other}`)
+                  }
+                  else if (hindi > 100 ||  typeof (hindi) !== Number) {
+                    other = "error";
+                    error++;
+                    console.log(` Hindi    -   100   -      32         -  ${other}`)
+                  }
+                  
+
+                
+                  
+                //English                 
+                  if (english >= 35 && english <= 50) {
+                    other = "#distin";   
+                    console.log(`English   -   50    -      18         -  ${other}`);
+                  }
+                  else if (english < 0 || english == "") {
+                    other = "error";
+                    error++;
+                    console.log(`English   -   50    -      18         -  ${other}`)  
+                  }
+                  else if (english < 18) {
+                    other = "supply";
+                    supply++;        
+                    console.log(`English   -   50    -      18         -  ${other}`)             
+                  }
+                  else if (english < 35 && english >= 18) {
+                    other = "";
+                    console.log(`English   -   50    -      18         -  ${other}`)
+                  }
+                  else if (english > 100 ||  typeof (english) !== Number) {
+                    other = "error";
+                    error++;
+                    console.log(`English   -   50    -      18         -  ${other}`)  
+                  }
+                  
+
+
+                //Maths                 
+                  if (maths >= 85 && maths <= 100) {
+                    other = "#distin";   
+                    console.log(` Maths    -   100   -      39         -  ${other}`);
+                  }
+                  else if (maths < 0 || maths == "") {
+                    other = "error";
+                    error++;
+                    console.log(` Maths    -   100   -      39         -  ${other}`)
+                  }
+                  else if (maths < 39) {
+                    other = "supply"; 
+                    supply++;       
+                    console.log(` Maths    -   100   -      39         -  ${other}`)             
+                  }
+                  else if (maths < 85 && maths >= 39) {
+                    other = "";
+                    console.log(` Maths    -   100   -      39         -  ${other}`)
+                  }
+                  else if (maths > 100 ||  typeof (maths) !== Number) {
+                    other = "error";
+                    error++;
+                    console.log(` Maths    -   100   -      39         -  ${other}`)   
+                  }
+                  
+
+
+
+                //Science                   
+                  if (science >= 81 && science <= 100) {
+                    other = "#distin";   
+                    console.log(`Science   -   100   -      41         -  ${other}`);
+                  }
+                  else if (science < 0 || science == "") {
+                    other = "error";
+                    error++;
+                    console.log(`Science   -   100   -      41         -  ${other}`)
+                  }
+                  else if (science < 41) {
+                    other = "supply"; 
+                    supply++;       
+                    console.log(`Science   -   100   -      41         -  ${other}`)             
+                  }
+                  else if (science < 81 && science >= 41) {
+                    other = "";
+                    console.log(`Science   -   100   -      41         -  ${other}`)
+                  }
+                  else if (science > 100 ||  typeof (science) !== Number) {
+                    other = "error";
+                    error++;
+                    console.log(`Science   -   100   -      41         -  ${other}`)
+                  }
+                  
+
+
+
+                //So.St.                   
+                  if (social >= 55 && social <= 100) {
+                    other = "#distin";   
+                    console.log(` So.St.   -   100   -      29         -  ${other}`);
+                  }
+                  else if (social < 0 || social == "") {
+                    other = "error";
+                    error++;
+                    console.log(` So.St.   -   100   -      29         -  ${other}`)
+                  }
+                  else if (social < 29) {
+                    other = "supply";
+                    supply++;        
+                    console.log(` So.St.   -   100   -      29         -  ${other}`)             
+                  }
+                  else if (social < 55 && social >= 29) {
+                    other = "";
+                    console.log(` So.St.   -   100   -      29         -  ${other}`)
+                  }
+                  else if (social > 100 ||  typeof (social) !== Number) {
+                    other = "error";
+                    error++;
+                    console.log(` So.St.   -   100   -      29         -  ${other}`)
+                  }
+                  
+
+
+
+                //Sanskrit  
+                  if (sanskrit >= 30 && sanskrit <= 50) {
+                    other = "#distin";   
+                    console.log(`Sanskrit  -    50   -      29         -  ${other}`);
+                  }
+                  else if (sanskrit < 0 || sanskrit == "") {
+                    other = "error";
+                    error++;
+                    console.log(`Sanskrit  -    50   -      29         -  ${other}`)
+                  }
+                  else if (sanskrit < 20) {
+                    other = "supply";     
+                    supply++;   
+                    console.log(`Sanskrit  -    50   -      29         -  ${other}`)             
+                  }
+                  else if (sanskrit < 30 && sanskrit >= 20) {
+                    other = "";
+                    console.log(`Sanskrit  -    50   -      29         -  ${other}`)
+                  }
+                  else if (sanskrit > 100 ||  typeof (sanskrit) !== Number) {
+                    other = "error";
+                    error++;
+                    console.log(`Sanskrit  -    50   -      29         -  ${other}`)
+                  }
+                  
+   
+
+
+                
+                //Division
+                  let sum = (hindi + english + maths + science + social + sanskrit);
+                  let percent = (sum / 500) * 100;  
+                  
+                  if (error >= 1) {   
+                    console.log("\n\nDivision: error");
+                  }
+                  else if (supply >= 3) {
+                    console.log("\n\nDivision: fail");
+                  }
+                  else if (percent > 75) {
+                    let division = "A+"
+                    console.log(`\n\nDivision: ${division} / ${percent.toFixed(2)}% `) 
+                  }
+                  else if (percent <= 75 && percent >= 60) {
+                    let division = "1st division"
+                    console.log(`\n\nDivision: ${division} / ${percent.toFixed(2)}% `) 
+                  }   
+                  else if (percent <= 59.99 && percent >= 40) {
+                    let division = "2nd division"
+                    console.log(`\n\nDivision: ${division} / ${percent.toFixed(2)}% `) 
+                  }   
+                  else{
+                    let division = "3rd division"
+                    console.log(`\n\nDivision: ${division} / ${percent.toFixed(2)}% `) 
+                  }                
+
+
+
+
+                //Result
+                  if (error >= 1) {
+                    console.log("Result: error");
+                  }
+                  else if (supply >= 3) {
+                    console.log("Result: fail");
+                  }
+                  else if (supply === 2) {
+                    console.log("Result: supply");
+                  }
+                  else{
+                    console.log("Result: Pass");
+                  }
+
+    </script>
+</body>
+</html>

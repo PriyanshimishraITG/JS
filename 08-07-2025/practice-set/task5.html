@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Console the big no. by prompt
+
+        let prompt1 = +prompt("First number?");
+        let prompt2 = +prompt("Second number?");
+        let prompt3 = +prompt("Third number?");
+
+        if (prompt1 > prompt2 && prompt1 > prompt3) {
+            console.log(`Number ${prompt1} is bigger.`);
+        }
+        else if (prompt2 > prompt1 && prompt2 > prompt3) {
+            console.log(`Number ${prompt2} is bigger.`);
+        }
+        else {
+            console.log(`Number ${prompt3} is bigger.`);
+        }
+        
+    </script>
+</body>
+</html>

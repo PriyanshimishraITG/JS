@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            background-color: black;
+            color: white;
+            padding: 50px;
+            display: inline-block;
+            font-size: 30px;
+        };
+    </style>
+</head>
+<body>
+    <div id = "box"></div>
+    <script>
+        let timeOut = +prompt("Enter time (in mili-second)");
+        let time = 0;
+        while (Number.isNaN(timeOut)) {
+            alert("Enter a valid number");
+            timeOut = +prompt("Enter time (in mili-second)");
+        }
+        if (!Number.isNaN(timeOut)) {
+            let box = document.getElementById("box");
+            let val = setInterval (() => {
+                time++;
+                box.innerText = time;
+            }, timeOut);
+            setTimeout (() => {
+                clearInterval(val);
+                box.style.display = "none";
+                setTimeout (() => {
+                    box.style.display = "inline-block";
+                }, timeOut);
+            }, timeOut);
+        };
+       
+    </script>
+</body>
+</html>

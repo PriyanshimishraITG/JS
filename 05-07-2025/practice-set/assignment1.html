@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-1</title>
+</head>
+<body>
+    <script>
+      
+        // Que-1  Ek student object banao jisme uske marks ho math, english aur science mein.
+        //        Average marks nikaalo aur if-else se grade do:
+        //        -->  A+ (90 ya usse zyada), A (80–89), B (70–79), C (60–69), Fail (<60).
+        //        -->  Average aur grade ko ek sentence mein print karo.
+
+
+                  const student = {
+                    maths: 82,
+                    english: 91,
+                    science: 89
+                  }
+
+                  const average_marks = (student.maths + student.english + student.science) / 3;
+
+                  if (average_marks >= 90) {
+                    let grade = "A+";
+                    console.log(`Your average marks are: ${average_marks}. \n Your grade is ${grade}.`)
+                  }
+                  else if (average_marks >= 80 && average_marks <= 89) {
+                    let grade = "A";
+                    console.log(`Your average marks are: ${average_marks}. \n Your grade is ${grade}.`)
+                  }
+                  else if (average_marks >= 70 && average_marks <= 79) {
+                    let grade = "B";
+                    console.log(`Your average marks are: ${average_marks}. \n Your grade is ${grade}.`)
+                  }
+                  else if (average_marks >= 60 && average_marks <= 69) {
+                    let grade = "C";
+                    console.log(`Your average marks are: ${average_marks}. \n Your grade is ${grade}.`)
+                  }
+                  else{
+                    let grade = "Fail";
+                    console.log(`Your average marks are: ${average_marks}. \n Your grade is ${grade}.`)
+                  }
+
+    </script>
+</body>
+</html>

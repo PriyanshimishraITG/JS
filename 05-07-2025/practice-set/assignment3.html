@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-3</title>
+</head>
+<body>
+    <script>
+
+        // Que-3  Ek object banao jisme productName aur price ho.
+        //        Discount apply karo:
+        //        -->  10000 se upar price pe 20% discount
+        //        -->  5000 se 10000 ke beech mein 10% discount
+        //        -->  5000 se kam pe koi discount nahi
+        //        -->  Final price print karo.
+
+
+                  const obj = {
+                    product_name : "Book",
+                    price : 40000
+                  }
+
+                  if(obj.price > 10000){
+                    let discount = (obj.price * 20) / 100;
+                    let final_price = obj.price - discount;
+                    console.log(`Final price is: ${final_price}`);
+                  }
+                  else if(obj.price <= 10000 && product.price >= 5000){
+                    let discount = (obj.price * 10) / 100;
+                    let final_price = obj.price - discount;
+                    console.log(`Final price is: ${final_price}`);
+                  }
+                  if(obj.price < 5000){
+                    let discount = "no discount";
+                    let final_price = obj.price;
+                    console.log(`Final price is: ${final_price}`);
+                  }  
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que-3</title>
+</head>
+<body>
+    <script>
+
+        // Q3: let shadowing – which value prints?
+
+            let value = 1;
+            {
+                let value = 2;
+                {
+                    let value = 3;
+                    console.log(value); // ?
+                }
+            }
+            
+        // Solution:-    3 will print.
+
+    </script>
+</body>
+</html>

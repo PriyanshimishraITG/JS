@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que-2</title>
+</head>
+<body>
+    <script>
+
+        // Q2: How does var behave inside a block vs. the whole function?
+
+            function outer() {
+                var x = 10;
+                if (true) {
+                    var x = 20;
+                    console.log("Inside:", x); // ?
+                }
+                console.log("Outside:", x);   // ?
+            }
+            outer();
+
+        // Solution:-     At both inside and outside "20" will print.
+
+    </script>
+</body>
+</html>

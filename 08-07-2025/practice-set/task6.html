@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Palindrome or not
+
+        let word = prompt("To check about ?");
+
+        let word_reverse = word.split("").reverse().join("");
+
+        if (word_reverse == word) {
+            console.log("It is a Palindrome.");
+        }
+        else {
+            console.log("It is not a Palindrome.");
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: linear-gradient(to right, rgb(59, 49, 204), rgb(238, 5, 44));
+        }
+        .box2 {
+            bottom: 500px;
+            background-color: white; 
+            display: inline-block;
+            border: 5px solid#07f5c5;
+            border-radius: 20px;
+            padding: 4px;
+            width: 410px;
+            margin: 6% 33%;
+        }
+        .box3 {
+            border: 3px solid#07f5c5;
+            border-radius: 15px;
+            padding: 20px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 10PX;
+        }
+        h2 {
+            font-size: 70px;
+            font-family: "Rubik Gemstones", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .input {
+            padding: 10px;
+            background-color: purple;
+            color: white;
+            width: 93%;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        .res {
+            display: flex;
+            gap: 10px;
+            background: linear-gradient(to bottom, rgb(2, 183, 255), #07f5c5);
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px;
+            font-size: 20px;
+            color: white;
+            border: none;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 0 5px 3px #888;
+            transition: 0.2s;
+            background: linear-gradient(to right, blue, skyblue);
+        }
+        button:hover {
+            background: linear-gradient(to right, skyblue, blue);
+            color: black;
+        }
+        .divbtn {
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .btnnew {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .in {
+            border-radius: 100%;
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+     <div id = "box">
+        <div class = "box2">
+            <div class = "box3">
+                <h2>WEB TOOL</h2>
+                 
+                <div>
+                    <input class = "input" type="text" id="input" value="" name="text" placeholder="Enter text here"> 
+                </div>
+                <div class = "res">
+                    <h4>Output: </h4><p id="para"></p>
+                </div>
+                <div class = "divbtn">
+                    <div class = "btnnew">
+                        <button onclick="tobold()">Bold</button>
+                        <button onclick="toitalic()">Italic</button>
+                    </div>
+                    <div class = "btnnew">
+                        <button onclick="uppercase()">Uppercase</button>
+                        <button onclick="lowercase()">Lowercase</button> 
+                    </div>
+                    <div class = "btnnew">
+                        <button onclick="textcolor()">
+                            Text-Color
+                            <input type="color" id = "input1" class = "in">
+                        </button>
+                        <button onclick="capitalizeWords()">Capitalize Each word</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let input = document.getElementById("input");
+        let para = document.getElementById("para");
+
+        function tobold() {
+            para.innerText = input.value;
+            if (para.style.fontWeight === "bold") {
+                para.style.fontWeight = "normal";
+            } else {
+                para.style.fontWeight = "bold";
+            };
+        };
+         function toitalic() {
+            para.innerText = input.value;
+            if (para.style.fontStyle === "italic") {
+                para.style.fontStyle = "normal";
+            } else {
+                para.style.fontStyle = "italic";
+            };
+        };
+        function uppercase() {
+            let upperText = input.value.toUpperCase();
+            para.innerText = upperText;
+        };
+        function lowercase() {
+            let lowerText = input.value.toLowerCase();
+            para.innerText = lowerText;
+        };
+        function textcolor() { 
+            let input1 = document.getElementById("input1");
+            const currentColor = getComputedStyle(para).color;
+            if (currentColor === "rgb(0, 0, 0)") {
+                para.style.color = input1.value;
+            } else {
+                para.style.color = "black";
+            };
+        };
+        function capitalizeWords() {
+            let isCapitalized = false;
+            let originalText = "";
+            if (!isCapitalized) {
+                originalText = input.value;         
+                let capitalized = input.value.split(' ')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+                para.innerText = capitalized;
+                isCapitalized = true;
+            } else {
+                para.innerText = originalText;
+                isCapitalized = false;
+            }
+            input.value = "";
+        };
+    </script>
+</body>
+</html>

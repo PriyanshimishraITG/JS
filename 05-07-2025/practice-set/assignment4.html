@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-4</title>
+</head>
+<body>
+    <script>
+
+        // Que-4  Ek person object banao jisme name aur age ho.
+        //        Decide karo ki woh:
+        //        -->  Child (<13), Teenager (13–19), Adult (20–59), ya Senior (60+) hai.
+        //        -->  If-else use karke category print karo.
+
+
+                  const person = {
+                    name : "ABC",
+                    age : 30,
+                  }
+                  if(person.age < 13){
+                    console.log("Category: Child");
+                  }
+                  else if(person.age <= 19 && person.age >= 13){
+                    console.log("Category: Teenager");
+                  }
+                  else if(person.age <= 59 && person.age >= 20){
+                    console.log("Category: Adult");
+                  }
+                  else {
+                    console.log("Category: Senior");
+                  }
+
+    </script>
+</body>
+</html>

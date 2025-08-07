@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-2</title>
+</head>
+<body>
+    <script>
+
+        let sum = 0;
+
+        function table (i, sum) {
+            let x = 1;
+            let z = +prompt("Kaha tk Table chahiye")
+            while(x <= z) {
+                let y = (i*2);
+                let n = x * y;
+                sum += n;
+                console.log(`${y} x ${x} = ${n}`);
+                x++;
+            }; 
+            console.log(`\n\nSum is ${sum}.`);
+        };
+        
+        table (3, sum);
+    </script>
+</body>
+</html>

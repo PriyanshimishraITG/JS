@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .active {
+            background-color: black;
+            color: white;
+            border: 1px solid gray;
+            display: inline-block;
+            padding: 40px;
+            width: 40%;
+        }
+        .container {
+            background-color: rgb(17, 243, 205);
+            color: black;
+            border: 1px solid gray;
+            display: inline-block;
+            padding: 40px;
+            width: 40%;
+        }
+        .button{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container" id = "box">
+        <p>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+            deserunt mollit anim id est laborum.
+        </p>
+        <div class = "button">
+            <button onclick = "darkmode()">Click me</button>
+        </div>
+    </div>
+    
+
+    <script>
+        let container = document.querySelector("#box");
+
+        function darkmode () {
+            if (container.getAttribute("class") === "container") {
+                container.setAttribute("class", "active");
+            } else {
+                container.setAttribute("class", "container");
+            };
+        };
+    </script>
+</body>
+</html>

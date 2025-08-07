@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-5</title>
+</head>
+<body>
+    <script>
+        
+        // Que-5 create an array called my-info which have 2 objects:-
+        //       each object have cityname, address, roll-Number then swap the value of 1 object with another
+
+                 const my_info = [
+                     {
+                        cityname: "Dewas",
+                        address: "Mukharji Nagar",
+                        roll_no: 123
+                     },
+
+                     {
+                        cityname: "Indore",
+                        address: "Vijay Nagar",
+                        roll_no: 987
+                     }
+                 ];
+                 
+                 let my_info_new = my_info[0];
+                     my_info[0] = my_info[1];
+                     my_info[1] = my_info_new;
+
+                 console.log(my_info)
+    </script>
+</body>
+</html>

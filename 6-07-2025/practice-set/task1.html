@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "work">
+        <input type="text" id="input">
+        <button onclick="bclick()">Add</button>
+    </div>
+
+    <script>
+        let input = document.getElementById("input");
+
+        function bclick() {
+            let box = document.createElement("div");
+            let p = document.createElement("p");
+            p.setAttribute("class","para");
+            p.innerText = input.value;
+            let btn = document.createElement("button");
+            btn.innerText = "Delete";
+
+            btn.onclick = function () {
+                box.remove(); 
+            };
+            box.appendChild(p);
+            box.appendChild(btn);
+            document.body.appendChild(box);
+            input.value = "";
+        };
+    </script>
+</body>
+</html>

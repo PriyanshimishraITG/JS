@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-7</title>
+</head>
+<body>
+    <script>
+         
+        // Que-7  Ek bill object banao jisme totalAmount aur numberOfPeople ho.
+        //        Agar totalAmount 500 se zyada hai:
+        //        -->  10% service charge add karo
+        //        -->  Fir har bande ka kitna bill hoga calculate karo aur print karo.
+
+    
+                  const bill = {
+                    total_amount: 10000,
+                    number_of_people: 10
+                  }
+                
+                  if(bill.total_amount > 500){
+                    let grand_total = bill.total_amount + (bill.total_amount * 10) / 100;
+                    console.log("Payble amount after include all charge", grand_total)
+                    console.log(`Each person have to pay ${grand_total / bill.number_of_people}`)
+                  }
+                  else {
+                    console.log("Payble amount after include all charge", bill.total_amount)
+                  }
+
+    </script>
+</body>
+</html>

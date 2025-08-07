@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-10</title>
+</head>
+<body>
+    <script>
+
+        // Que-10  Ek object banao jisme name aur unitsConsumed ho.
+        //         Bill calculate karo:
+        //         -->  Pehle 100 units ₹5 per unit
+        //         -->  101 se 300 units ₹7 per unit
+        //         -->  300 se upar ₹10 per unit
+        //         -->  Name aur total bill amount print karo.
+
+
+                    const bill = {
+                        name: 'Pawan',
+                        units_consumed: 301
+                    }
+
+                    if (bill.units_consumed <= 100){
+                        let total = bill.units_consumed * 5
+                        console.log(`${bill.name}, you have to pay Rs.${total}`)
+                    }
+                    else if (bill.units_consumed <= 300 && bill.units_consumed >= 101){
+                        let total = bill.units_consumed * 7
+                        console.log(`${bill.name}, you have to pay Rs.${total}`)
+                    }
+                    else if (bill.units_consumed > 300){
+                        let total = bill.units_consumed * 10
+                        console.log(`${bill.name}, you have to pay Rs.${total}`)
+                    } 
+
+    </script>
+</body>
+</html>

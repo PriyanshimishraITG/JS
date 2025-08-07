@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-8</title>
+</head>
+<body>
+    <script>
+
+        // Que-8  Ek object banao jisme year ho.
+        //        Check karo ki woh leap year hai ya nahi:
+        //        -->  Year 4 se divisible hona chahiye
+        //        -->  Agar 100 se divisible ho toh 400 se bhi divisible hona chahiye
+        //        -->  Print karo leap year hai ya nahi.
+
+
+                  const year = {
+                    year: 2020
+                  }
+                  if (year.year % 4 === 0 || year.year % 100 === 0 && year.year % 400 === 0) {
+                    console.log(`${year.year} is a leap year.`)
+                  }
+                  else {
+                    console.log(`${year.year} is not a leap year.`)
+                  }
+
+    </script>
+</body>
+</html>

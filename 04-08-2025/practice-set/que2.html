@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .heading {
+            color: red;
+        }
+        .newheading {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 2. Element ki Class Toggle Karna
+            Description: classList.add() aur classList.remove() ka use karke ek element ki class toggle karo jab wo click ho. 
+            classList.contains() se check karo ki class exist karti hai ya nahi. -->
+
+    <div>
+        <h1 class = "heading" id = "neww">Hello World!</h1>
+    </div>
+    <div>
+        <button onclick="classChange ()">Click to change</button>
+    </div>
+
+    <script>
+        function classChange () {
+            let x = document.querySelector("#neww");
+            x.classList.remove("heading");
+            x.classList.add("newheading");
+            let a = x.classList.contains("heading");
+            console.log(a);
+        }
+    </script>
+</body>
+</html>

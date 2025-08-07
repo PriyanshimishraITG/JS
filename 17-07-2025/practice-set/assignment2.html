@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-2</title>
+</head>
+<body>
+    <script>
+
+        // Write a JavaScript function to count how many words are present in a sentence. 
+        // Example: "My name is Robert" → 4
+
+        // Is question mein aapko ek JavaScript function likhna hai jo yeh bataye ki ek sentence mein kitne words 
+        // hain. Sentence ek aisi line hoti hai jismein words spaces se alag-alag hote hain. Jaise example mein diya 
+        // gaya hai: "My name is Robert", is sentence mein total 4 words hain. Aapka function ek string input lega 
+        // (sentence ki form mein), aur batayega ki usmein total kitne words present hain. Bas aapko dhyan dena hai 
+        // ki sentence ko sahi tareeke se analyse karke accurate word count nikala jaaye.
+
+
+        function countWords(sentence) {
+            const words = sentence.trim().split(/\s+/).filter(word => word.length > 0);
+            return words.length;
+        }
+
+        const input = "My name is Robert";
+        const wordCount = countWords(input);
+        console.log(wordCount);
+
+    </script>
+</body>
+</html>

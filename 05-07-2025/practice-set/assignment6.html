@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-6</title>
+</head>
+<body>
+    <script>
+
+        // Que-6  Ek object banao jisme triangle ke sides a, b, aur c ho. Batao:
+        //        -->  Equilateral (sab sides barabar)
+        //        -->  Isosceles (do sides barabar)
+        //        -->  Scalene (sab alag)
+        //        -->  If-else se triangle type batao.
+
+
+                  const triangle = {
+                    side_a: 49,
+                    side_b: 46,
+                    side_c: 52
+                  };
+
+                  if (triangle.side_a === triangle.side_b === triangle.side_c) {
+                    console.log(`Type of triangle is: Equilateral.`)
+                  }
+                  else if (triangle.side_a === triangle.side_b || triangle.side_a === triangle.side_c || triangle.side_b === triangle.side_c) {
+                    console.log(`Type of triangle is: Isosceles.`)
+                  }
+                  else {
+                    console.log(`Type of triangle is: Scalene.`)
+                  }
+                
+    </script>
+</body>
+</html>

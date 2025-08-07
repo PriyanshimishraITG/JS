@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-7</title>
+</head>
+<body>
+    <script>
+
+        // 7. String Character Count
+        //    Use a for-of loop to count the number of vowels in a given string.
+           
+           let vowels = 0;
+
+           const str = "intermediate level questions";                                              ///////////// 
+            
+        //    for (const i of str) {
+        //      console.log(i);
+        //    };
+    
+           for (let i = 0; i < str.length; i++) {
+
+             let word = str[i].toLowerCase();
+
+             if (word === 'a' || word === 'e' || word ==='i' || word === 'o' || word === 'u') {
+                vowels++;
+             }
+           };
+
+           console.log(`The number of vowels in your string are: ${vowels}.`)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-5</title>
+</head>
+<body>
+    <script>
+
+        // Que-5  Create a user object with username and password.
+        //        Check password strength:
+        //        -->  Less than 6 characters: "Weak"
+        //        -->  6–10: "Medium"
+        //        -->  More than 10: "Strong"
+
+
+                  let user = {
+                    username: "ABC",
+                    password: "123456"                                 
+                  }
+                  
+                  if (user.password.length < 6) {
+                    console.log("Your password is: Weak.")
+                  }
+                  else if (user.password.length >= 6 && user.password.length <= 10) {
+                    console.log("Your password is: Medium.")
+                  }
+                  else if (user.password.length > 10) {
+                    console.log("Your password is: Strong.")
+                  }
+
+    </script>
+
+</body>
+</html>

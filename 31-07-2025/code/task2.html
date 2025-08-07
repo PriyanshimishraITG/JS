@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .logi, .sig {
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color: rgb(17, 243, 205);
+            margin: auto;
+            width: 27%;
+            padding: 0px 20px;
+        }
+        .active1 {
+            display: none;
+        }
+        .button {
+            margin: 20px 0px; 
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class = "logi">
+        <div>
+            <h1>LOGIN</h1>
+        </div>
+        <div>
+            <input type="text">
+            <input type="text">
+        </div>
+        <div class = "button">
+            <button>Login</button>
+            <button onclick = "sign()">Sign-up</button>
+        </div>
+    </div>
+
+
+    <div class = "active1 sig">
+        <div>
+            <h1>SIGN UP</h1>
+        </div>
+        <div>
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+        </div>
+        <div class = "button">
+            <button onclick = "login()">Login</button>
+            <button>Sign-up</button>
+        </div>
+    </div>
+
+
+    
+    <script>
+        let logi = document.querySelector(".logi");
+        let sig = document.querySelector(".sig");
+        function login () {
+            logi.setAttribute("class", "logi");
+            sig.setAttribute("class", "sig active1");
+        };
+        function sign () {
+            sig.setAttribute("class", "sig");
+            logi.setAttribute("class", "logi active1");
+        };
+    </script>
+</body>
+</html>

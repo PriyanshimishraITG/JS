@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "div1">Div - 1    </div>
+    <div id = "div2">Div - 2    </div>
+    <div id = "div3">Div - 3    </div>
+
+    <button onclick="swapFun ()">Click me</button>
+    <script>
+        let a = document.querySelector("#div1");
+        let b = document.querySelector("#div2");
+        let c = document.querySelector("#div3");
+        
+        function swapFun () {
+            let d = c.innerHTML;
+            c.innerHTML = b.innerHTML;
+            b.innerHTML = a.innerHTML;
+            a.innerHTML = d;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let a = "1";
+        // let b = "2";
+        // let c = "3";
+        // let d = c;
+    </script>
+</body>
+</html>

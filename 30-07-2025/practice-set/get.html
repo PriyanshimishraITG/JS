@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div>
+            <h1 id = "new0">Hello World!</h1>
+        </div>
+        <div class = "new1">
+            <p class = "new2">Hi there!</p>
+        </div>
+        <div>
+            <input type = "" name = "name" value = "hello">
+        </div>
+    </section>
+
+    <script>
+
+        document.getElementById("new0").style.color = "red";
+        document.getElementsByClassName("new1")[0].style.background = "skyblue";
+        document.getElementsByName("name")[0].style.background = "#34ebc0";
+        document.getElementsByTagName("p")[0].style.color = "blue";
+        document.querySelector("#new0").textContent = "Its me!";
+        document.querySelectorAll(".new2").textContent = "I am using VS";
+
+          // Query select all
+    </script>
+</body>
+</html>

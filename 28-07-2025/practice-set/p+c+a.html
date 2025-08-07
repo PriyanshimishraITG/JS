@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let realName = "Priyanshi Mishra";
+        let realPassward = "P_square";
+
+        let name = prompt("Enter your name");
+        let passward = prompt("Enter your passward");
+
+        if (name == realName && passward == realPassward) {
+            confirm("Do you want to login?");
+
+            if (confirm) {
+                document.write("Login Successful");
+            } else {
+                document.write("Not Login");
+            };
+        } else {
+            document.write("Incorrect name & passward");
+        };
+
+    </script>
+</body>
+</html>

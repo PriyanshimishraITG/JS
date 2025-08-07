@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-3</title>
+</head>
+<body>
+    <script>
+
+        // Write a function to compare two strings and return true if they are equal, ignoring case.
+        // Example: "JavaScript" and "javascript" → true
+
+        // Is question mein aapko ek JavaScript function banana hai jo do strings ko compare kare aur check kare ki 
+        // kya dono strings equal hain — bina case ka dhyan diye (case-insensitive comparison). Matlab, agar pehla 
+        // string "JavaScript" hai aur doosra "javascript", toh dono ko equal maana jaayega, kyunki sirf letters ke 
+        // case (uppercase ya lowercase) mein farq hai, meaning same hai. Aapka function dono strings ko compare 
+        // karega aur agar wo content-wise same hain, chahe capital ya small letters mein ho, toh true return karega. 
+        // Agar content different hai, toh false return karega.
+
+
+        function compareStringsIgnoreCase(str1, str2) {
+            return str1.toLowerCase() === str2.toLowerCase();
+        }
+
+        console.log(compareStringsIgnoreCase("JavaScript", "javascript")); 
+        console.log(compareStringsIgnoreCase("Hello", "HELLO"));           
+        console.log(compareStringsIgnoreCase("Test", "Taste"));
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-1</title>
+</head>
+<body>
+    <script>
+
+        // Write a function to capitalize the first letter of each word in a sentence. 
+        // Example: "i love js" → "I Love Js"
+
+        // Is question mein aapko ek JavaScript function banana hai jo kisi sentence ke har word ka first letter 
+        // capital kare. Sentence mein multiple words honge jo spaces se alag-alag hote hain. Jaise agar input hai 
+        // "i love js", toh aapka function output dega "I Love Js". Matlab har word ka pehla character capital ho 
+        // jaayega, aur baaki characters waise hi rahenge. Function ko ek sentence input lena hai, uske har word ka
+        // first letter capital karna hai, aur final modified sentence ko return ya print karna hai. Output sentence
+        // clearly formatted hona chahiye with proper capitalization.
+
+
+        function capitalizeWords(sentence) {
+        return sentence
+            .split(' ')                                 // Words ko split karo space ke basis par
+            .map(word => {
+
+                // Agar word empty nahi hai toh first letter capital karo
+
+                if (word.length === 0) return '';
+                return word[0].toUpperCase() + word.slice(1);
+            })
+            .join(' ');                                 // Wapas join karo space ke saath
+        }
+
+        const input = "i love js";
+        const output = capitalizeWords(input);
+        console.log(output);
+
+    </script>
+</body>
+</html>

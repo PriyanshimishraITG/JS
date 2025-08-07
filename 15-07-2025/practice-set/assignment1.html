@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-1</title>
+</head>
+<body>
+    <script>
+
+        //FIRST
+{
+    for (let x = 1; x <= 3; x++) {               //ROWS
+        let pattern = '';
+        for (let y = 1; y <= 3; y++) {          //COLUMN
+            pattern = pattern + '*  ';
+        }
+        console.log(pattern); 
+    }
+    console.log('\n');
+}
+
+
+
+//SECOND
+{
+    for (let x = 1; x <= 3; x++) {               //ROWS
+        let pattern = '';
+        for (let y = 1; y <= 3; y++) {          //COLUMN
+            if (x == 2) {
+                pattern = pattern + y;
+            }
+            else {
+                pattern = pattern + '*';
+            }
+        }
+        console.log(pattern); 
+    }
+    console.log('\n');
+}
+
+
+
+//THIRD
+{
+    let pattern = '';
+    for (let x = 1; x <= 9; x++) {
+        pattern = pattern + '*  ';
+        
+        if (x % 3 === 0) {
+            pattern = pattern + '\n';
+        }
+    }
+    console.log(pattern);
+    console.log('\n');
+}
+
+
+
+//FORTH
+{
+    let n = +prompt('Enter vale of n');
+    let pattern = '';
+    for (let i = 1; i <= n*n; i++) {
+         pattern = pattern + '*  ';
+         
+         if (i % n === 0) {
+            pattern = pattern + '\n';
+        }
+    }
+    console.log(pattern);
+    console.log('\n');
+}
+
+
+
+//FIFTH
+{
+    let n = +prompt('Enter vale of n');
+    for (let i = 1; i <= n; i++) {
+        let pattern = '';
+        for (let j = 1; j <= n; j++) {
+            // if (i % 2 == 0) {
+            //     pattern = pattern + j;
+            // }
+            // else {
+            //     pattern = pattern + '*';
+            // }
+            pattern += (i % 2 == 0) ? j : '*';
+        }
+        console.log(pattern);
+    }
+}
+
+//OR
+{
+    let n = +prompt('Enter vale of n');
+    for (let i = 1; i <= n; i++) {
+        let pattern = '';
+        for (let j = 1; j <= n; j++) {
+            if (i % 2 == 0) {
+                pattern = pattern + j;
+            }
+            else {
+                pattern = pattern + '*';
+            }
+            //pattern += (i % 2 == 0) ? j : '*';
+        }
+        console.log(pattern);
+    }
+}
+    </script>
+</body>
+</html>
