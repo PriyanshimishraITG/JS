@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #si {
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color: rgb(17, 243, 205);
+            margin: auto;
+            width: 27%;
+            padding: 0px 20px;
+        }
+
+        .butto {
+            margin: 20px 0px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        Name: <br> <input type="text" required name="name"> <br><br>
+        Age: <br> <input type="number" required name="age"> <br><br>
+        Email: <br> <input type="text" required name="email"> <br><br>
+        Passward: <br> <input type="password" required name="passward"> <br><br>
+        Class: <br> <select name="class" required id = "selectog"> </select> <br><br>
+        Gender: <br>
+            Male: <input type="radio" required name="gender" value="male">
+            Female: <input type="radio" required name="gender" value="female">
+            Other: <input type="radio" required name="gender" value="other"> <br><br>
+        Photo: <br> <input type="file" required name="photo"> <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        let formdata = {};
+        const form = document.getElementById("form");
+        const inputs = document.getElementsByTagName("input");
+        const select = document.getElementsByTagName("select");  
+        const selectog = document.getElementById("selectog");
+
+        for (let i=1; i<=100; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.innerText = i;
+            selectog.appendChild(option);
+        }
+
+        function neww (obj, key, value) {
+            obj[key] = value;
+            return value;
+        };
+        
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            // const inputs = document.getElementsByTagName("input");
+            // Array.from(inputs).forEach(element => {
+            //     neww(formdata, element.name, element.value);
+            // });
+            console.log(formdata);
+        });
+
+        Array.from(inputs).forEach((element) => {
+            element.addEventListener("input", (event) => {
+                const value = event.target.value;
+                const key = event.target.name;
+                neww(formdata, key, value);
+                console.log(formdata);
+            });
+        });
+        Array.from(select).forEach((element) => {
+            element.addEventListener("input", (event) => {
+                const value = event.target.value;
+                const key = event.target.name;
+                neww(formdata, key, value);
+                console.log(formdata);
+            });
+        });
+    </script>
+</body>
+
+</html>

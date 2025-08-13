@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "res"></h1>
+
+    <script>
+        function update(text) {
+            document.querySelector("#res").innerText = text;
+        };
+        function sum(a, b, CallBack) {
+            let res = a + b;
+            CallBack(res);
+        };
+        sum(10, 10, update);
+    </script>
+</body>
+</html>  

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle-Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUDPQYPbwfl-ZSjWsz8O6EMQnb2P6eTo3J7Q&s/images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        .body0 {
+            color: white;
+        }
+        .body1 {
+            color: #07f5c5;
+        }
+        .color {
+            color: black;
+        }
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 60px;
+            font-family: "Rubik Gemstones", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .button {
+            color: #07f5c5;
+            background-color: rgb(63, 20, 220);
+            padding: 6px;
+            border: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            color: rgb(63, 20, 220);
+            background-color: #07f5c5;
+        }
+        .gamediv {
+            border: 2px solid black;
+            margin: auto;
+            width: 100%;
+            height: 400px;
+            position: relative;
+            background-color: white;
+            opacity: 0.4;
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.9);
+        }
+        #score {
+            margin: 10px 0px 5px 0px;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            font-size: 18px;
+        }
+        .wingoal {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(38, 0, 255);
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+        }
+        #time {
+            margin: 0px 0px 5px 0px;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            font-size: 18px;
+        } 
+        .text {
+            position: absolute;
+            margin-top: 50px;
+            z-index: 3;
+            bottom: 8%;
+            transform: translate(50%, 40px);
+        }
+        .image {
+            width: 100%;
+            line-height: 50%;
+        }
+        header {
+            background-color: black;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 1337px;
+            margin: auto;
+        }
+        #theme {
+            color: white;
+            padding: 20px;
+        }
+        #logo {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class = "header">
+            <div><img src="data:image/png;base64,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" alt="" id = "logo"></div>
+            <div> <i class="fa fa-adjust" id = "theme" onclick = "themeMode ()"></i> </div>
+        </div>
+    </header>
+
+    <div id = "body" class = "body0">
+        <div>
+            <img class = "image" src="https://m.media-amazon.com/images/I/71RGoav5XdL.jpg" alt="" id = "bg_img">
+        </div>
+        <div class = "text">
+            <div>
+                <h1>Click the Circle Game</h1>
+            </div>
+            <div>
+                <button class = "button" id = "startbtn">Start Game</button>
+            </div>
+            <div id = "score">
+                <h4>Score:</h4> <p id = "scorecount">0</p>
+            </div>
+            <div id = "time">
+                <h4>Time Left:</h4> <span id = "timecount">30</span> <p>s</p>
+            </div>
+            <div class = "gamediv" id = "gamediv">
+                <button id = "btngame"></button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let a = document.getElementById("bg_img");
+        let b = document.getElementById("body");
+        let c = document.getElementById("score");
+        let d = document.getElementById("time");
+        function themeMode () {
+            if (a.getAttribute("src") === "https://m.media-amazon.com/images/I/71RGoav5XdL.jpg") {
+                a.setAttribute("src", "https://wallup.net/wp-content/uploads/2019/09/653073-mountains-landscape-nature-mountain-sky-clouds.jpg");
+            } else {
+                a.setAttribute("src", "https://m.media-amazon.com/images/I/71RGoav5XdL.jpg");
+            };
+            b.classList.toggle("body1");
+            c.classList.toggle("color");
+            d.classList.toggle("color");
+        };
+
+        let score = 0;
+        let time = 30;
+
+        let goncircle;
+        let countdown;
+        let timeout;
+        let wingoal;
+
+        let startBtn = document.getElementById("startbtn");
+        let scores = document.getElementById("scorecount");
+        let timing = document.getElementById("timecount");
+        let gamediv = document.getElementById("gamediv");
+        
+        function end() {
+            clearInterval(goncircle);
+            clearInterval(countdown);
+            if (wingoal) {
+                wingoal.removeEventListener("click", click);
+                wingoal.remove();
+            }
+            startBtn.disabled = false;
+            alert(`Yay! Your final score is: ${score}`);
+        };
+        function start () {
+            score = 0;
+            time = 30;
+            scores.innerText = "0";
+            timing.innerText = "30";
+            startBtn.disabled = true;
+            if (wingoal) {
+                wingoal.remove();
+            };
+            wingoal = document.createElement("div");
+            wingoal.classList.add("wingoal");
+            wingoal.addEventListener("click", click);
+            gamediv.appendChild(wingoal);
+            goncircles(); 
+            goncircle = setInterval(goncircles, 1000);
+            countdown = setInterval(() => {
+                time--;
+                timing.innerText = time;
+                if (time == 0) {
+                    end();
+                };
+            }, 1000);
+        };
+        function click() {
+            score++;
+            scores.innerText = score;
+            goncircles();
+        };
+        function goncircles () {
+            let a = gamediv.offsetWidth  - 50;
+            let b = gamediv.offsetHeight - 50;
+            let random1 = Math.floor(Math.random() * a);
+            let random2 = Math.floor(Math.random() * b);
+            wingoal.style.left = `${random1}px`;
+            wingoal.style.top = `${random2}px`;
+        };
+        startBtn.addEventListener("click", start);
+        document.addEventListener("contextmenu", (e) => e.preventDefault());
+    </script>
+</body>
+</html>

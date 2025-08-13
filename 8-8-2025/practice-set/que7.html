@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Magic Button Game</title>
+</head>
+<body>
+  <div id="container"></div>
+  <button id="addButton">Naya Button Jodo</button>
+  <script>
+//     Task 7: Dynamic Event Listener (Event Delegation)
+// Goal: Dynamically added buttons par event listener apply karna hai.
+// Steps:
+// Ek div container create karo, aur us container mein addEventListener use 
+// karte hue har naye button par click event add karo.
+// Jab bhi user naye button pe click kare, ek message show ho "Button {button index} clicked!" (index of button).
+
+    let container = document.getElementById("container");
+    let addButton = document.getElementById("addButton");
+    let count = 0;
+
+    // 🎩 Ye dibbe ko sikha rahe hain
+    container.addEventListener("click", function(event) {
+      if (event.target.tagName === "BUTTON") {
+        let index = event.target.getAttribute("data-index");
+        alert("Button " + index + " clicked!");
+      }
+    });
+
+    // 🧚‍♂️ Jab naya button jodna ho
+    addButton.addEventListener("click", function() {
+      count++;
+      let newButton = document.createElement("button");
+      newButton.textContent = "Button " + count;
+      newButton.setAttribute("data-index", count);
+      container.appendChild(newButton);
+    });
+  </script>
+
+</body>
+</html>
